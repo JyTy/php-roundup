@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 
 <?php 
-    $clanki = $db->get_results("SELECT * FROM clanki");
+    $clanki = $db->get_results("SELECT * FROM clanki ORDER BY datum DESC LIMIT 3");
 ?>
         
         <div class="content blog">
