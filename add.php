@@ -1,18 +1,18 @@
 <?php
 	require_once('header.php');
 
-    $napaka = 0;
+    $napaka = array();
 	
     // Dobi podatki iz forme
     if(isset($_POST['naslov'])) {
         if($_POST['naslov'] == "") {
-            $napaka = "prosimo vnesite naslov";
+            array_push($napaka, "prosimo vnesite naslov");
         } else {
             $naslov = $_POST['naslov'];
         }
 
         if($_POST['vsebina'] == "") {
-            $napaka = "prosimo dodajte vsebino";
+            array_push($napaka, "prosimo dodajte vsebino");
         } else {
             $vsebina = $_POST['vsebina'];
         }
@@ -26,7 +26,9 @@
 
 <?php
     if($napaka) {
-        echo '<div style="color: red;">'.$napaka.'</div>';
+        foreach ($napaka as $sporocilo) {
+            echo '<div style="color: red;">'.$sporocilo.'</div>';
+        }
     }
 ?>
 <form action="add.php" method="POST">
