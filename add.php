@@ -1,8 +1,29 @@
 <?php
 	require_once('header.php');
+
+    $napaka = 0;
 	
+    // Dobi podatki iz forme
+    if(isset($_POST['naslov'])) {
+        if($_POST['naslov'] == "") {
+            $napaka = "prosimo vnesite naslov";
+        } else {
+            $naslov = $_POST['naslov'];
+        }
+
+        if($_POST['vsebina'] == "") {
+            $napaka = "prosimo dodajte vsebino";
+        } else {
+            $vsebina = $_POST['vsebina'];
+        }
+    }
 ?>
 
+<?php
+    if($napaka) {
+        echo '<div style="color: red;">'.$napaka.'</div>';
+    }
+?>
 <form action="add.php" method="POST">
     Naslov članka:<br>
     <input type="text" name="naslov"><br>
