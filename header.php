@@ -31,5 +31,6 @@ function pr($array) {
                 <li><a href="o-nas.php">O Nas</a></li>
 				<li><a href="igra.php">Nagradna igra</a></li>
                 <li><a href="kontakt.php">Kontakt</a></li>
+                <li><a href="add.php">Dodaj članek</a></li>
             </ul>
         </nav>

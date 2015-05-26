@@ -16,6 +16,11 @@
         } else {
             $vsebina = $_POST['vsebina'];
         }
+
+        // Vpis v bazo
+        if(!$napaka) {
+            $db->query("INSERT INTO clanki (naslov, vsebina) VALUES ('$naslov', '$vsebina')");
+        }
     }
 ?>
 
