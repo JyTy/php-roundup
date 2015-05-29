@@ -4,6 +4,7 @@ require_once('skripte/ez_sql_mysql.php');
 
 // Vzpostavitev komunikacije z bazo
 $db = new ezSQL_mysql('root','baze','sn_spletka','localhost');
+$db->query("SET NAMES UTF8");
 
 // Funkcija za izpis arrayev
 function pr($array) {
@@ -18,7 +19,7 @@ function pr($array) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>SmartNinja PHP layout</title>
     
     <link rel="stylesheet" href="stil.css">
